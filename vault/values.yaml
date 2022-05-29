@@ -574,7 +574,7 @@ server:
 
     # Configures the service type for the main Vault service.  Can be ClusterIP
     # or NodePort.
-    type: LoadBalancer
+    #type: ClusterIP
 
     # Do not wait for pods to be ready
     publishNotReadyAddresses: true
@@ -806,7 +806,7 @@ ui:
   publishNotReadyAddresses: true
   # The service should only contain selectors for active Vault pod
   activeVaultPodOnly: false
-  serviceType: "ClusterIP"
+  serviceType: "LoadBalancer"
   serviceNodePort: null
   externalPort: 8200
   targetPort: 8200
