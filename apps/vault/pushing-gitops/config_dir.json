@@ -3,8 +3,10 @@
   "userGivenName": "vault",
   "destNamespace": "default",
   "destServer": "https://kubernetes.default.svc",
-  "srcPath": "apps/vault/overlays/argocd-gitops",
+  "srcPath": "vault",
   "srcRepoURL": "https://github.com/PushingStart/argocd-gitops.git",
   "srcTargetRevision": "",
-  "labels": null
+  "labels": null,
+  "exclude": "",
+  "include": ""
 }
