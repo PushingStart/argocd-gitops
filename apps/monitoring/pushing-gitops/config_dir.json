@@ -1,0 +1,12 @@
+{
+  "appName": "monitoring",
+  "userGivenName": "monitoring",
+  "destNamespace": "default",
+  "destServer": "https://kubernetes.default.svc",
+  "srcPath": "tree/main/monitoring/metrics-server",
+  "srcRepoURL": "https://github.com/PushingStart/argocd-gitops.git",
+  "srcTargetRevision": "",
+  "labels": null,
+  "exclude": "",
+  "include": ""
+}
