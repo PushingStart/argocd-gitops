@@ -41,7 +41,7 @@ injector:
 
   # If true, will enable a node exporter metrics endpoint at /metrics.
   metrics:
-    enabled: false
+    enabled: true
 
   # External vault server address for the injector to use. Setting this will
   # disable deployment of a vault server along with the injector.
@@ -689,7 +689,7 @@ server:
   # Helm project by default.  It is possible to manually configure Vault to use a
   # different HA backend.
   ha:
-    enabled: false
+    enabled: true
     replicas: 3
 
     # Set the api_addr configuration for Vault HA
@@ -802,7 +802,7 @@ ui:
   # serviceType can be used to control the type of service created. For
   # example, setting this to "LoadBalancer" will create an external load
   # balancer (for supported K8S installations) to access the UI.
-  enabled: false
+  enabled: true
   publishNotReadyAddresses: true
   # The service should only contain selectors for active Vault pod
   activeVaultPodOnly: false
@@ -947,4 +947,3 @@ csi:
 
   # Pass arbitrary additional arguments to vault-csi-provider.
   extraArgs: []
-
