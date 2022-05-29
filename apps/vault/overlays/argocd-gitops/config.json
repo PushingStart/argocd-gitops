@@ -1,0 +1,10 @@
+{
+  "appName": "vault",
+  "userGivenName": "vault",
+  "destNamespace": "default",
+  "destServer": "https://kubernetes.default.svc",
+  "srcPath": "apps/vault/overlays/argocd-gitops",
+  "srcRepoURL": "https://github.com/PushingStart/argocd-gitops.git",
+  "srcTargetRevision": "",
+  "labels": null
+}
