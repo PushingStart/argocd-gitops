@@ -60,10 +60,10 @@ deployment:
 
 # Pod disruption budget
 podDisruptionBudget:
-  enabled: true
+  enabled: false
   # maxUnavailable: 1
   # maxUnavailable: 33%
-  minAvailable: 1
+  # minAvailable: 0
   # minAvailable: 25%
 
 # Use ingressClass. Ignored if Traefik version < 2.3 / kubernetes < 1.18.x
@@ -86,7 +86,7 @@ experimental:
   http3:
     enabled: false
   plugins:
-    enabled: true
+    enabled: false
   kubernetesGateway:
     enabled: false
     # certificate:
@@ -187,7 +187,7 @@ logs:
     level: ERROR
   access:
     # To enable access logs
-    enabled: true
+    enabled: false
     # By default, logs are written using the Common Log Format (CLF).
     # To write logs in JSON, use json in the format option.
     # If the given format is unsupported, the default (CLF) is used instead.
@@ -403,18 +403,18 @@ service:
 ## Create HorizontalPodAutoscaler object.
 ##
 autoscaling:
-  enabled: true
-   minReplicas: 1
-   maxReplicas: 10
-   metrics:
-   - type: Resource
-     resource:
-       name: cpu
-       targetAverageUtilization: 60
-   - type: Resource
-     resource:
-       name: memory
-       targetAverageUtilization: 60
+  enabled: false
+#   minReplicas: 1
+#   maxReplicas: 10
+#   metrics:
+#   - type: Resource
+#     resource:
+#       name: cpu
+#       targetAverageUtilization: 60
+#   - type: Resource
+#     resource:
+#       name: memory
+#       targetAverageUtilization: 60
 
 # Enable persistence using Persistent Volume Claims
 # ref: http://kubernetes.io/docs/user-guide/persistent-volumes/
@@ -423,7 +423,7 @@ autoscaling:
 # - "--certificatesresolvers.le.acme.storage=/data/acme.json"
 # It will persist TLS certificates.
 persistence:
-  enabled: true
+  enabled: false
   name: data
 #  existingClaim: ""
   accessMode: ReadWriteOnce
