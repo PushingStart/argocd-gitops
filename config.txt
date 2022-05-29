@@ -1,0 +1,30 @@
+# All of the commands need your git token with the --git-token flag,
+# or the GIT_TOKEN env variable:
+
+    export GIT_TOKEN=<YOUR_TOKEN>
+
+# The commands will also need your repo clone URL with the --repo flag,
+# or the GIT_REPO env variable:
+
+    export GIT_REPO=<REPO_URL>
+
+# 1. Run the bootstrap installation on your current kubernetes context.
+# This will install argo-cd as well as the application-set controller.
+
+    argocd-autopilot repo bootstrap
+
+# Please note that this will automatically attempt to create a private repository,
+# if the clone URL references a non-existing one. If the repository already exists,
+# the command will just clone it.
+
+# 2. Create your first project
+
+    argocd-autopilot project create my-project
+
+# 3. Install your first application on your project
+
+    argocd-autopilot app create demoapp --app github.com/argoproj-labs/argocd-autopilot/examples/demo-app/ -p my-project
+
+
+kubectl apply -n argocd \
+    -f https://raw.githubusercontent.com/argoproj-labs/rollout-extension/v0.1.0/manifests/install.yaml
