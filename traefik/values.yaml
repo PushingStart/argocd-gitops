@@ -11,7 +11,7 @@ image:
 deployment:
   enabled: true
   # Can be either Deployment or DaemonSet
-  kind: DaemonSet
+  kind: Deployment
   # Number of pods of the deployment (only applies when kind == Deployment)
   replicas: 1
   # Amount of time (in seconds) before Kubernetes will send the SIGKILL signal if Traefik does not shut down
@@ -60,8 +60,8 @@ deployment:
 
 # Pod disruption budget
 podDisruptionBudget:
-  enabled: true
-   maxUnavailable: 1
+  enabled: false
+  # maxUnavailable: 1
   # maxUnavailable: 33%
   # minAvailable: 0
   # minAvailable: 25%
@@ -187,7 +187,7 @@ logs:
     level: ERROR
   access:
     # To enable access logs
-    enabled: true
+    enabled: false
     # By default, logs are written using the Common Log Format (CLF).
     # To write logs in JSON, use json in the format option.
     # If the given format is unsupported, the default (CLF) is used instead.
@@ -423,7 +423,7 @@ autoscaling:
 # - "--certificatesresolvers.le.acme.storage=/data/acme.json"
 # It will persist TLS certificates.
 persistence:
-  enabled: true
+  enabled: false
   name: data
 #  existingClaim: ""
   accessMode: ReadWriteOnce
